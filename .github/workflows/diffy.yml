@@ -25,8 +25,6 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Trigger Diffy comparison
-        env:
-          DIFFY_API_KEY: ${{ secrets.DIFFY_API_KEY }}
         run: |
-          php $GITHUB_WORKSPACE/diffy.phar auth:login $DIFFY_API_KEY
+          php $GITHUB_WORKSPACE/diffy.phar auth:login ${{ secrets.DIFFY_API_KEY }}
           php $GITHUB_WORKSPACE/diffy.phar project:compare 21058 production staging
