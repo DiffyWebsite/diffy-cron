@@ -27,4 +27,4 @@ jobs:
       - name: Trigger Diffy comparison
         run: |
           php $GITHUB_WORKSPACE/diffy.phar auth:login ${{ secrets.DIFFY_API_KEY }}
-          php $GITHUB_WORKSPACE/diffy.phar project:compare 21058 production staging
+          php $GITHUB_WORKSPACE/diffy.phar project:compare 21058 prod stage
